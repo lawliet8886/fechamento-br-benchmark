@@ -1,0 +1,46 @@
+{
+  "frozen_at_utc": "2026-10-08T09:01:08.166787+00:00",
+  "experiment_id": "confirmation-v1-20261008",
+  "status": "review_pass_for_native_zero_model_preflight",
+  "bundle_sha256": "a32b622bd5c52fe547611b982f87cbcdae1e3482da43a24409487f7d04a9156d",
+  "recipe": {
+    "source_hashes": {
+      "fechamento_core.py": "1f4d877511f8f004d7d63454eb908b3b2aac9d973521a70a0a67610d4ec52294",
+      "final_contract.py": "bc3c8f1ffa3a69bd7c52874a8e69a91f6d824008d52c6f8fd9d8d580748db10d",
+      "final_runner.py": "9b7b44c4ed7c4c1bf375e8e03bbf7746bed3d7c2fcff88b908a23492aea3bc0b",
+      "kaggle_final_adapter.py": "f36dcbdfaba1a1fc24cf588581d7308e5cb9eb258f5dc0060aceb406a36e5c2b"
+    },
+    "cell_hashes": {
+      "fechamento_core.py": "ce80e16b4a2ec76a6d08d08fd7aa260e57bc68f7ee8eed52eddeae5bcafc1534",
+      "final_contract.py": "0464959c115ded005e897fa6acd9d7487ca186bf0f1202c54679e7eda3868379",
+      "final_runner.py": "ab79a435be91232ce122ce7d43b750789e3f39f5a053f80e8f4db30eb507e2ae",
+      "kaggle_final_adapter.py": "b7ed052d0bc82ba6e0e0a6647cdb99e387a93c6a217bdfb6b9ab67d0c1103410",
+      "confirmation_runner.py": "eda6b0f280083af92c68350ae35170f1ecf0bf617c93892d5d97829b17953d0c",
+      "confirmation-guard": "7bb0e88baeaaf1130f4cf4cad69dc89428072b506f7fa92ecb5afc444f10e7e8",
+      "confirmation-execution": "7de7ff76d526c6ed500415241b8d84b3279b3bc0fda9df7cfaeeb9d49f266d2f"
+    },
+    "confirmation_adapter_file_sha256": "8f440dd2d10f636b48aa0adf5cf8a5e5112cdcc4f79afa115f1049cb0d9d1155",
+    "cases_text_sha256": "913d471c32a273329ba3048fd5e10a1f323450d8c0e4f38f3aaa0cdda72d4220",
+    "protocol_text_sha256": "9e87558332b84fac0c56f7283e25aeb8b47177ac248b4a9b4d291743bf82c0ab",
+    "analysis_file_sha256": "8c275378173aa6d5f35190aa4a73dadd0157edc6c1565b93a0452fa409da25ba",
+    "verifier_file_sha256": "e163b2596af1d0bb22eda3191c3b58869193d71e5f8220fef4436c234d22353b",
+    "builder_file_sha256": "749f7838d31b1c7dc8d0b5e27cc80a56a558bd1fe864c5b24e279163d79a0d8c",
+    "planned_requests": 72,
+    "repetitions": 2
+  },
+  "reviewer": "Codex Desktop GPT-6.1 Sol / Maximum, separate AI reviewer, not human or blind",
+  "review_sha256": "e478ef69999cbad703211c2dc58c734bd4681cd434b5a4c89dbd517fdf7ba6a5",
+  "file_hashes": {
+    "build_confirmation.py": "749f7838d31b1c7dc8d0b5e27cc80a56a558bd1fe864c5b24e279163d79a0d8c",
+    "confirmation_runner.py": "8f440dd2d10f636b48aa0adf5cf8a5e5112cdcc4f79afa115f1049cb0d9d1155",
+    "verify_confirmation.py": "e163b2596af1d0bb22eda3191c3b58869193d71e5f8220fef4436c234d22353b",
+    "test_review_regressions.py": "0c4b484b9b7190ec9244663edc876b3bd8de0be4f847ddc65af6033e86beb6e3",
+    "Fechamento_BR_Confirmation_v1_SAFE.ipynb": "b4e3cc5ca0388644604c02d4b4cb4cd78e9787594d7cce855a97630435e5aa4e",
+    "cases.json": "841142738aedc6b69bfc7c1379818a02ab20f8e41956552d66d286dce8b43c3e",
+    "PROTOCOL.md": "9e87558332b84fac0c56f7283e25aeb8b47177ac248b4a9b4d291743bf82c0ab"
+  },
+  "supplementary_model_responses_at_freeze": 0,
+  "preregistration_commit": "6cf0c5824e9dac4871c9ea7827c9b0ab90c6c2e3",
+  "inference_conditions": "Requires successful actual native preflight/readback and included quota check. No personal payment.",
+  "original_84_response_study_unchanged": true
+}

@@ -1,0 +1,17 @@
+{
+  "verified_at_utc": "2026-10-08T09:06:11.563808+00:00",
+  "state": "native_zero_model_preflight_pass",
+  "bundle_sha256": "a32b622bd5c52fe547611b982f87cbcdae1e3482da43a24409487f7d04a9156d",
+  "native_sdk": "0.6.1",
+  "sdk_cache": false,
+  "seven_executed_source_cells_matched_approved_hashes": true,
+  "uploaded_readback_sources_matched": 11,
+  "executed_code_cells": 9,
+  "native_decorators_registered": true,
+  "model_calls": 0,
+  "output": "CONFIRMATION_OFFLINE_READY: 12 cases; zero model calls\n\n\n\n\n\nNATIVE_PREFLIGHT_PASS 0.6.1 cache= False\nPLANNED_MODELS ['google/gemini-3.8-flash', 'anthropic/claude-sonnet-4-6@default', 'google/gemma-4-26b-a4b']\nNATIVE_DECORATORS_REGISTERED_NO_RUN fechamento_br_confirmation_v1\nNO_MODEL_PREFLIGHT_COMPLETE: zero model calls\nCONFIRMATION_MODEL_CALLS_DISABLED\n",
+  "executed_notebook_sha256": "e42f669d31c6b20f151401e8b06ae83c630fd51e846503813893e060e6b4b21e",
+  "included_daily_quota_remaining_usd_displayed": 9.2,
+  "included_monthly_quota_remaining_usd_displayed": 99.2,
+  "personal_api_payment_authorized": false
+}
