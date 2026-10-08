@@ -1,0 +1,18 @@
+{
+  "version": "design-v3",
+  "duration_seconds": 109.802,
+  "film_sha256": "6c4b62650a16894c03bd7fe3a2557ad4739ce0ccf1eb0199b6b2c77fd93939b7",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": "30/1",
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "files": {
+    "fechamento-br-v3-6c4b6265.mp4": "6c4b62650a16894c03bd7fe3a2557ad4739ce0ccf1eb0199b6b2c77fd93939b7",
+    "poster-v3.png": "5dc1a988e596ea30daa7a279bf4d2f6cdd754ddeece9e1be19d6bae48a60fa6a",
+    "captions-v3.vtt": "ef7f63547d80a66b3d30c9a1033f650756bcfd58aa119db7c365d7a19aa01f06",
+    "index.html": "c4a9261bf52d7bfc515ec552293f9fa34ee37492d9102b60c0b04ce8a8d68c74"
+  }
+}

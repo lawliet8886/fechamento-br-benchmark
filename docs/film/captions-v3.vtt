@@ -1,0 +1,129 @@
+WEBVTT
+
+1
+00:00:00.160 --> 00:00:02.360
+Two models got the same score,
+
+2
+00:00:02.360 --> 00:00:05.600
+but their mistakes told completely different stories.
+
+3
+00:00:08.240 --> 00:00:11.620
+28 fictional cases tested field normalization.
+
+4
+00:00:11.620 --> 00:00:14.830
+Three model IDs produced 84 answers.
+
+5
+00:00:14.830 --> 00:00:18.400
+Gemini scored 28. Claude and Gemma, 26.
+
+6
+00:00:21.113 --> 00:00:22.360
+Explicit rules in.
+
+7
+00:00:22.597 --> 00:00:24.238
+Raw responses out.
+
+8
+00:00:24.238 --> 00:00:27.100
+Code checks JSON, status, and canonical value.
+
+9
+00:00:27.100 --> 00:00:30.450
+Native traces preserve each prompt and answer.
+
+10
+00:00:30.881 --> 00:00:34.721
+Take the text 4.700.
+
+11
+00:00:34.721 --> 00:00:38.300
+The declared Brazilian convention
+makes that dot a thousands separator.
+
+12
+00:00:38.300 --> 00:00:40.320
+Claude called it ambiguous.
+
+13
+00:00:40.320 --> 00:00:45.760
+Gemma returned the right amount, but
+omitted the required decimal places.
+
+14
+00:00:45.760 --> 00:00:47.001
+Both lost a strict point.
+
+15
+00:00:50.140 --> 00:00:55.500
+After those results, we registered 12 new
+money cases before collecting answers.
+
+16
+00:00:55.500 --> 00:00:57.379
+Same three model IDs. Two repetitions.
+
+17
+00:00:57.379 --> 00:01:01.860
+72 responses, separate from the original 84.
+
+18
+00:01:03.678 --> 00:01:07.950
+For 3.600, the source declares a decimal point.
+
+19
+00:01:07.950 --> 00:01:10.318
+Claude abstained again.
+
+20
+00:01:10.318 --> 00:01:13.549
+Gemma omitted a required zero in repetition one,
+
+21
+00:01:13.549 --> 00:01:15.839
+then passed this case in repetition two.
+
+22
+00:01:21.177 --> 00:01:22.829
+Gemini scored 12 twice.
+
+23
+00:01:22.829 --> 00:01:24.850
+Claude scored 7, then 6.
+
+24
+00:01:24.850 --> 00:01:27.578
+Gemma, 11, then 12.
+
+25
+00:01:27.578 --> 00:01:29.878
+Claude had 7 unnecessary abstentions,
+
+26
+00:01:29.878 --> 00:01:33.458
+3 JSON-container violations and 1 wrong amount.
+
+27
+00:01:33.458 --> 00:01:35.778
+All 24 control responses passed.
+
+28
+00:01:37.276 --> 00:01:41.797
+These targeted cases do not
+establish general model superiority.
+
+29
+00:01:41.797 --> 00:01:44.090
+Values and wording changed together.
+
+30
+00:01:44.090 --> 00:01:47.218
+Inspect the raw answers and grading code.
+
+31
+00:01:47.218 --> 00:01:49.037
+Same score. Different failure.

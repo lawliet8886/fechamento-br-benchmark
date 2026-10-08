@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fechamento BR — Same Score, Different Failure | Film</title>
+<meta name="description" content="A 110-second supplementary walkthrough of the instrument, recorded money examples and limits of Fechamento BR.">
+<meta property="og:title" content="Fechamento BR — Same Score, Different Failure">
+<meta property="og:image" content="https://lawliet8886.github.io/fechamento-br-benchmark/film/poster-v3.png">
+<style>
+:root{color-scheme:dark;--bg:#0b1729;--fg:#f3f7fc;--muted:#bed0e2;--teal:#5ce0c2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% 0%,#173644,transparent 55%),var(--bg);color:var(--fg);font:18px/1.6 system-ui,Segoe UI,sans-serif}
+main{max-width:1120px;margin:auto;padding:30px 24px 50px}.kicker{font-size:13px;color:var(--teal);letter-spacing:.12em;font-weight:700}h1{font-size:clamp(30px,5vw,56px);line-height:1.1;margin:14px 0}p{color:var(--muted)}a{color:var(--teal)}a:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:5px}
+video{width:100%;aspect-ratio:16/9;background:#060e19;display:block;border:1px solid #30445e;border-radius:12px;margin:26px 0 14px}.links{display:flex;gap:18px;flex-wrap:wrap}.note{font-size:15px}details{margin-top:28px;border-top:1px solid #30445e;padding-top:18px}summary{cursor:pointer;font-weight:600}.transcript{max-width:850px}.transcript p{color:var(--fg)}@media(max-width:540px){main{padding:22px 16px}body{font-size:16px}.links{gap:12px}video{margin-top:20px}}
+</style></head><body><main>
+<div class="kicker">SUPPLEMENTARY VIDEO · 1 MINUTE 50 SECONDS</div>
+<h1>Same score.<br>Different failure.</h1>
+<p>How the benchmark works, step by step—and why recorded money errors with the same strict penalty can mean different things.</p>
+<video controls playsinline preload="metadata" poster="poster-v3.png" aria-label="Fechamento BR, a narrated 110-second walkthrough with English captions">
+<source src="fechamento-br-v3-6c4b6265.mp4" type="video/mp4">
+<track kind="subtitles" src="captions-v3.vtt" srclang="en" label="English (optional; captions are already visible in the film)">
+Your browser does not support video playback. <a href="fechamento-br-v3-6c4b6265.mp4">Download the film</a>.
+</video>
+<p class="note">English narration and visible captions. No login or subscription is needed. The original 84-answer study and the separate 72-answer targeted follow-up remain distinct. Neither establishes general model superiority.</p>
+<nav class="links" aria-label="Evidence"><a href="../">Original evidence: 84 answers</a><a href="../confirmation.html">Separate follow-up: 72 answers</a><a href="https://dev.to/lawliet8886/same-score-different-failure-fechamento-br-1050">Read the article</a><a href="fechamento-br-v3-6c4b6265.mp4" download>Download MP4</a></nav>
+<details><summary>Read the English transcript</summary><div class="transcript"><p>Two models got the same score, but their mistakes told completely different stories.</p><p>Twenty-eight fictional cases tested field normalization. Three model IDs produced eighty-four answers. Gemini scored twenty-eight; Claude and Gemma, twenty-six.</p><p>Explicit rules in. Raw responses out. Code checks JSON, status, and canonical value. Native traces preserve each prompt and answer.</p><p>Take the text four dot seven zero zero. The declared Brazilian convention makes that dot a thousands separator. Claude called it ambiguous. Gemma returned the right amount, but omitted the required decimal places. Both lost a strict point.</p><p>After those results, we registered twelve new money cases before collecting answers. Same three model IDs, two repetitions: seventy-two responses, separate from the original eighty-four.</p><p>For three dot six zero zero, the source declares a decimal point. Claude abstained again. Gemma omitted a required zero in repetition one, then passed this case in repetition two.</p><p>Gemini scored twelve twice. Claude scored seven, then six. Gemma, eleven, then twelve. Claude had seven unnecessary abstentions, three JSON-container violations, and one wrong amount. All twenty-four control responses passed.</p><p>These targeted cases do not establish general model superiority. Values and wording changed together. Inspect the raw answers and grading code. Same score. Different failure.</p></div></details>
+<p class="note">This is an AI-assisted editorial explanation of fictional benchmark cases, not a new measurement, human audit or blinded review.</p>
+</main></body></html>
