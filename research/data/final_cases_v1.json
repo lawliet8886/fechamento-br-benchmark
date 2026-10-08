@@ -1,0 +1,458 @@
+{
+  "version": "final-v1-candidate",
+  "purpose": "new_final_corpus_pending_independent_review",
+  "authored_at_utc": "2026-10-07T18:58:20.061791+00:00",
+  "author": "ChatGPT executor; human owner Gabriel",
+  "review_status": "pending Codex Desktop 6.1 Sol Max; no final model calls permitted before review",
+  "design": "28 cases = 12 contrast pairs + 4 controls; seven cases per family; fixed interleaved order",
+  "cases": [
+    {
+      "id": "N01A",
+      "role": "contrast",
+      "pair": "N01",
+      "group": "numeros",
+      "input": {
+        "kind": "money",
+        "raw": "4.700",
+        "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "4700.00"
+      },
+      "rationale": "O ponto é separador de milhar porque a fonte declara pt-BR."
+    },
+    {
+      "id": "A01A",
+      "role": "contrast",
+      "pair": "A01",
+      "group": "ausencias",
+      "input": {
+        "kind": "count",
+        "raw": "",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada."
+      },
+      "expected": {
+        "status": "missing",
+        "value": null
+      },
+      "rationale": "Nenhuma quantidade foi informada."
+    },
+    {
+      "id": "D01A",
+      "role": "contrast",
+      "pair": "D01",
+      "group": "datas",
+      "input": {
+        "kind": "date",
+        "raw": "29/02/2400",
+        "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "2400-02-29"
+      },
+      "rationale": "O ano 2400 é divisível por 400 e é bissexto no calendário gregoriano."
+    },
+    {
+      "id": "I01A",
+      "role": "contrast",
+      "pair": "I01",
+      "group": "identificadores",
+      "input": {
+        "kind": "identifier",
+        "raw": "00072",
+        "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "00072"
+      },
+      "rationale": "Zeros fazem parte do identificador, por isso todos são mantidos."
+    },
+    {
+      "id": "N01B",
+      "role": "contrast",
+      "pair": "N01",
+      "group": "numeros",
+      "input": {
+        "kind": "money",
+        "raw": "4.700",
+        "context": "Valor monetário não negativo. A fonte declara en-US: vírgula separa milhares e ponto separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "4.70"
+      },
+      "rationale": "O ponto é decimal porque a fonte declara en-US; o zero decimal final pode ser removido."
+    },
+    {
+      "id": "A01B",
+      "role": "contrast",
+      "pair": "A01",
+      "group": "ausencias",
+      "input": {
+        "kind": "count",
+        "raw": "000",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "0"
+      },
+      "rationale": "A sequência de zeros informa explicitamente a quantidade zero."
+    },
+    {
+      "id": "D01B",
+      "role": "contrast",
+      "pair": "D01",
+      "group": "datas",
+      "input": {
+        "kind": "date",
+        "raw": "29/02/2300",
+        "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes."
+      },
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "2300 é divisível por 100, mas não por 400; não existe 29 de fevereiro nesse ano."
+    },
+    {
+      "id": "I01B",
+      "role": "contrast",
+      "pair": "I01",
+      "group": "identificadores",
+      "input": {
+        "kind": "count",
+        "raw": "00072",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "72"
+      },
+      "rationale": "A mesma cadeia informa uma quantidade decimal, não um código."
+    },
+    {
+      "id": "N02A",
+      "role": "contrast",
+      "pair": "N02",
+      "group": "numeros",
+      "input": {
+        "kind": "money",
+        "raw": "6,250",
+        "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "6.25"
+      },
+      "rationale": "A vírgula decimal declarada produz 6.250; retirar apenas o zero final mantém o valor."
+    },
+    {
+      "id": "A02A",
+      "role": "contrast",
+      "pair": "A02",
+      "group": "ausencias",
+      "input": {
+        "kind": "count",
+        "raw": "ND",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. O marcador literal ND foi definido pela fonte como não informado."
+      },
+      "expected": {
+        "status": "missing",
+        "value": null
+      },
+      "rationale": "A fonte autoriza expressamente ND como marcador de ausência."
+    },
+    {
+      "id": "D02A",
+      "role": "contrast",
+      "pair": "D02",
+      "group": "datas",
+      "input": {
+        "kind": "date",
+        "raw": "06/09/2032",
+        "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "2032-09-06"
+      },
+      "rationale": "DD/MM determina seis de setembro, sem ambiguidade residual."
+    },
+    {
+      "id": "I02A",
+      "role": "contrast",
+      "pair": "I02",
+      "group": "identificadores",
+      "input": {
+        "kind": "identifier",
+        "raw": "  RQ09  ",
+        "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "RQ09"
+      },
+      "rationale": "Somente os espaços externos são removidos."
+    },
+    {
+      "id": "N02B",
+      "role": "contrast",
+      "pair": "N02",
+      "group": "numeros",
+      "input": {
+        "kind": "money",
+        "raw": "6,250",
+        "context": "Valor monetário não negativo. A origem pode ser pt-BR ou en-US e não há metadados para escolher. Não deduza a origem pelo idioma. Não arredondar; zeros decimais excedentes podem ser removidos."
+      },
+      "expected": {
+        "status": "ambiguous",
+        "value": null
+      },
+      "rationale": "Duas leituras válidas permanecem: 6.25 em pt-BR e 6250.00 em en-US."
+    },
+    {
+      "id": "A02B",
+      "role": "contrast",
+      "pair": "A02",
+      "group": "ausencias",
+      "input": {
+        "kind": "count",
+        "raw": "ND",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. A fonte não definiu marcadores de ausência; ND não tem significado especial."
+      },
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "Sem definição de marcador, ND viola a gramática de quantidade; não adivinhar sua intenção."
+    },
+    {
+      "id": "D02B",
+      "role": "contrast",
+      "pair": "D02",
+      "group": "datas",
+      "input": {
+        "kind": "date",
+        "raw": "06/09/2032",
+        "context": "Data no calendário gregoriano. A origem declara MM/DD/AAAA. Não substituir nem corrigir componentes."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "2032-06-09"
+      },
+      "rationale": "MM/DD determina nove de junho; a mesma cadeia tem outro valor pela origem explícita."
+    },
+    {
+      "id": "I02B",
+      "role": "contrast",
+      "pair": "I02",
+      "group": "identificadores",
+      "input": {
+        "kind": "identifier",
+        "raw": "  RQ  09  ",
+        "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "RQ  09"
+      },
+      "rationale": "Dois espaços internos são parte do código e devem permanecer."
+    },
+    {
+      "id": "N03A",
+      "role": "contrast",
+      "pair": "N03",
+      "group": "numeros",
+      "input": {
+        "kind": "money",
+        "raw": "28,4300",
+        "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "28.43"
+      },
+      "rationale": "Só há zeros além da segunda casa; a redução é exata."
+    },
+    {
+      "id": "A03A",
+      "role": "contrast",
+      "pair": "A03",
+      "group": "ausencias",
+      "input": {
+        "kind": "count",
+        "raw": "\t  ",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. Remova espaços e tabulações externos antes de validar; se o conteúdo restante for vazio, está não informado."
+      },
+      "expected": {
+        "status": "missing",
+        "value": null
+      },
+      "rationale": "Depois da remoção externa expressamente permitida, não resta conteúdo."
+    },
+    {
+      "id": "D03A",
+      "role": "contrast",
+      "pair": "D03",
+      "group": "datas",
+      "input": {
+        "kind": "date",
+        "raw": "07/11/2031",
+        "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "2031-11-07"
+      },
+      "rationale": "O formato DD/MM explícito determina sete de novembro."
+    },
+    {
+      "id": "I03A",
+      "role": "contrast",
+      "pair": "I03",
+      "group": "identificadores",
+      "input": {
+        "kind": "identifier",
+        "raw": "5E03",
+        "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "5E03"
+      },
+      "rationale": "Código alfanumérico é preservado literalmente; não transformá-lo em 5000."
+    },
+    {
+      "id": "N03B",
+      "role": "contrast",
+      "pair": "N03",
+      "group": "numeros",
+      "input": {
+        "kind": "money",
+        "raw": "28,4307",
+        "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos."
+      },
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "O dígito 7 não nulo além das duas casas impede representação exata; truncar ou arredondar é proibido."
+    },
+    {
+      "id": "A03B",
+      "role": "contrast",
+      "pair": "A03",
+      "group": "ausencias",
+      "input": {
+        "kind": "count",
+        "raw": "\t 07 ",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. Remova espaços e tabulações externos antes de validar; se o conteúdo restante for vazio, está não informado."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "7"
+      },
+      "rationale": "A remoção externa deixa 07, quantidade decimal inteira igual a sete."
+    },
+    {
+      "id": "D03B",
+      "role": "contrast",
+      "pair": "D03",
+      "group": "datas",
+      "input": {
+        "kind": "date",
+        "raw": "07/11/2031",
+        "context": "Data no calendário gregoriano. A origem não informa se usa DD/MM/AAAA ou MM/DD/AAAA. Ambas são possíveis; não escolha pelo idioma desta pergunta. Não substituir componentes."
+      },
+      "expected": {
+        "status": "ambiguous",
+        "value": null
+      },
+      "rationale": "Sete de novembro e onze de julho são datas válidas; falta metadado para escolher."
+    },
+    {
+      "id": "I03B",
+      "role": "contrast",
+      "pair": "I03",
+      "group": "identificadores",
+      "input": {
+        "kind": "count",
+        "raw": "5E03",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada."
+      },
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "A gramática de quantidade permite só dígitos; não converter silenciosamente notação científica."
+    },
+    {
+      "id": "NCTL",
+      "role": "control",
+      "pair": null,
+      "group": "numeros",
+      "input": {
+        "kind": "money",
+        "raw": "84,65",
+        "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "84.65"
+      },
+      "rationale": "Controle ordinário: decimal pt-BR com duas casas já fornecidas."
+    },
+    {
+      "id": "ACTL",
+      "role": "control",
+      "pair": null,
+      "group": "ausencias",
+      "input": {
+        "kind": "count",
+        "raw": "18",
+        "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "18"
+      },
+      "rationale": "Controle positivo simples: dezoito foi informado explicitamente."
+    },
+    {
+      "id": "DCTL",
+      "role": "control",
+      "pair": null,
+      "group": "datas",
+      "input": {
+        "kind": "date",
+        "raw": "16/08/2029",
+        "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "2029-08-16"
+      },
+      "rationale": "Controle sem fronteira: dezesseis de agosto é uma data válida no formato declarado."
+    },
+    {
+      "id": "ICTL",
+      "role": "control",
+      "pair": null,
+      "group": "identificadores",
+      "input": {
+        "kind": "identifier",
+        "raw": "9007199254741017",
+        "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "9007199254741017"
+      },
+      "rationale": "Código longo permanece como texto integral, sem conversão de ponto flutuante."
+    }
+  ]
+}

@@ -1,0 +1,872 @@
+{
+  "phase": "ORIGINAL_FROZEN_84_RESPONSES_NOT_PUBLIC_RERUNS",
+  "models": [
+    {
+      "id": "google/gemini-3.8-flash",
+      "name": "Gemini 3.8 Flash",
+      "score": 28
+    },
+    {
+      "id": "anthropic/claude-sonnet-4-6@default",
+      "name": "Claude Sonnet 4.6",
+      "score": 26
+    },
+    {
+      "id": "google/gemma-4-26b-a4b",
+      "name": "Gemma 4 26B A4B",
+      "score": 26
+    }
+  ],
+  "cases": [
+    {
+      "id": "N01A",
+      "group": "numeros",
+      "pair": "N01",
+      "raw": "4.700",
+      "kind": "money",
+      "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos.",
+      "expected": {
+        "status": "ok",
+        "value": "4700.00"
+      },
+      "rationale": "O ponto é separador de milhar porque a fonte declara pt-BR.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"4700.00\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": false,
+          "errors": [
+            "wrong_status",
+            "wrong_value"
+          ]
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"4700\"}",
+          "correct": false,
+          "errors": [
+            "wrong_value"
+          ]
+        }
+      }
+    },
+    {
+      "id": "A01A",
+      "group": "ausencias",
+      "pair": "A01",
+      "raw": "",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada.",
+      "expected": {
+        "status": "missing",
+        "value": null
+      },
+      "rationale": "Nenhuma quantidade foi informada.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "D01A",
+      "group": "datas",
+      "pair": "D01",
+      "raw": "29/02/2400",
+      "kind": "date",
+      "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes.",
+      "expected": {
+        "status": "ok",
+        "value": "2400-02-29"
+      },
+      "rationale": "O ano 2400 é divisível por 400 e é bissexto no calendário gregoriano.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"2400-02-29\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"2400-02-29\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"2400-02-29\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "I01A",
+      "group": "identificadores",
+      "pair": "I01",
+      "raw": "00072",
+      "kind": "identifier",
+      "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica.",
+      "expected": {
+        "status": "ok",
+        "value": "00072"
+      },
+      "rationale": "Zeros fazem parte do identificador, por isso todos são mantidos.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"00072\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"00072\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"00072\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "N01B",
+      "group": "numeros",
+      "pair": "N01",
+      "raw": "4.700",
+      "kind": "money",
+      "context": "Valor monetário não negativo. A fonte declara en-US: vírgula separa milhares e ponto separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos.",
+      "expected": {
+        "status": "ok",
+        "value": "4.70"
+      },
+      "rationale": "O ponto é decimal porque a fonte declara en-US; o zero decimal final pode ser removido.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"4.70\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": false,
+          "errors": [
+            "wrong_status",
+            "wrong_value"
+          ]
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"4.7\"}",
+          "correct": false,
+          "errors": [
+            "wrong_value"
+          ]
+        }
+      }
+    },
+    {
+      "id": "A01B",
+      "group": "ausencias",
+      "pair": "A01",
+      "raw": "000",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada.",
+      "expected": {
+        "status": "ok",
+        "value": "0"
+      },
+      "rationale": "A sequência de zeros informa explicitamente a quantidade zero.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"0\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"0\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"0\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "D01B",
+      "group": "datas",
+      "pair": "D01",
+      "raw": "29/02/2300",
+      "kind": "date",
+      "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes.",
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "2300 é divisível por 100, mas não por 400; não existe 29 de fevereiro nesse ano.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "I01B",
+      "group": "identificadores",
+      "pair": "I01",
+      "raw": "00072",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada.",
+      "expected": {
+        "status": "ok",
+        "value": "72"
+      },
+      "rationale": "A mesma cadeia informa uma quantidade decimal, não um código.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"72\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"72\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"72\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "N02A",
+      "group": "numeros",
+      "pair": "N02",
+      "raw": "6,250",
+      "kind": "money",
+      "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos.",
+      "expected": {
+        "status": "ok",
+        "value": "6.25"
+      },
+      "rationale": "A vírgula decimal declarada produz 6.250; retirar apenas o zero final mantém o valor.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"6.25\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"6.25\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"6.25\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "A02A",
+      "group": "ausencias",
+      "pair": "A02",
+      "raw": "ND",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. O marcador literal ND foi definido pela fonte como não informado.",
+      "expected": {
+        "status": "missing",
+        "value": null
+      },
+      "rationale": "A fonte autoriza expressamente ND como marcador de ausência.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "D02A",
+      "group": "datas",
+      "pair": "D02",
+      "raw": "06/09/2032",
+      "kind": "date",
+      "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes.",
+      "expected": {
+        "status": "ok",
+        "value": "2032-09-06"
+      },
+      "rationale": "DD/MM determina seis de setembro, sem ambiguidade residual.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"2032-09-06\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"2032-09-06\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"2032-09-06\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "I02A",
+      "group": "identificadores",
+      "pair": "I02",
+      "raw": "  RQ09  ",
+      "kind": "identifier",
+      "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica.",
+      "expected": {
+        "status": "ok",
+        "value": "RQ09"
+      },
+      "rationale": "Somente os espaços externos são removidos.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"RQ09\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"RQ09\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"RQ09\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "N02B",
+      "group": "numeros",
+      "pair": "N02",
+      "raw": "6,250",
+      "kind": "money",
+      "context": "Valor monetário não negativo. A origem pode ser pt-BR ou en-US e não há metadados para escolher. Não deduza a origem pelo idioma. Não arredondar; zeros decimais excedentes podem ser removidos.",
+      "expected": {
+        "status": "ambiguous",
+        "value": null
+      },
+      "rationale": "Duas leituras válidas permanecem: 6.25 em pt-BR e 6250.00 em en-US.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "A02B",
+      "group": "ausencias",
+      "pair": "A02",
+      "raw": "ND",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. A fonte não definiu marcadores de ausência; ND não tem significado especial.",
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "Sem definição de marcador, ND viola a gramática de quantidade; não adivinhar sua intenção.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "D02B",
+      "group": "datas",
+      "pair": "D02",
+      "raw": "06/09/2032",
+      "kind": "date",
+      "context": "Data no calendário gregoriano. A origem declara MM/DD/AAAA. Não substituir nem corrigir componentes.",
+      "expected": {
+        "status": "ok",
+        "value": "2032-06-09"
+      },
+      "rationale": "MM/DD determina nove de junho; a mesma cadeia tem outro valor pela origem explícita.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"2032-06-09\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"2032-06-09\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"2032-06-09\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "I02B",
+      "group": "identificadores",
+      "pair": "I02",
+      "raw": "  RQ  09  ",
+      "kind": "identifier",
+      "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica.",
+      "expected": {
+        "status": "ok",
+        "value": "RQ  09"
+      },
+      "rationale": "Dois espaços internos são parte do código e devem permanecer.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"RQ  09\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"RQ  09\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"RQ  09\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "N03A",
+      "group": "numeros",
+      "pair": "N03",
+      "raw": "28,4300",
+      "kind": "money",
+      "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos.",
+      "expected": {
+        "status": "ok",
+        "value": "28.43"
+      },
+      "rationale": "Só há zeros além da segunda casa; a redução é exata.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"28.43\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"28.43\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"28.43\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "A03A",
+      "group": "ausencias",
+      "pair": "A03",
+      "raw": "\t  ",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. Remova espaços e tabulações externos antes de validar; se o conteúdo restante for vazio, está não informado.",
+      "expected": {
+        "status": "missing",
+        "value": null
+      },
+      "rationale": "Depois da remoção externa expressamente permitida, não resta conteúdo.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"missing\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "D03A",
+      "group": "datas",
+      "pair": "D03",
+      "raw": "07/11/2031",
+      "kind": "date",
+      "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes.",
+      "expected": {
+        "status": "ok",
+        "value": "2031-11-07"
+      },
+      "rationale": "O formato DD/MM explícito determina sete de novembro.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"2031-11-07\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"2031-11-07\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"2031-11-07\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "I03A",
+      "group": "identificadores",
+      "pair": "I03",
+      "raw": "5E03",
+      "kind": "identifier",
+      "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica.",
+      "expected": {
+        "status": "ok",
+        "value": "5E03"
+      },
+      "rationale": "Código alfanumérico é preservado literalmente; não transformá-lo em 5000.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"5E03\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"5E03\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"5E03\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "N03B",
+      "group": "numeros",
+      "pair": "N03",
+      "raw": "28,4307",
+      "kind": "money",
+      "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos.",
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "O dígito 7 não nulo além das duas casas impede representação exata; truncar ou arredondar é proibido.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "A03B",
+      "group": "ausencias",
+      "pair": "A03",
+      "raw": "\t 07 ",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada. Remova espaços e tabulações externos antes de validar; se o conteúdo restante for vazio, está não informado.",
+      "expected": {
+        "status": "ok",
+        "value": "7"
+      },
+      "rationale": "A remoção externa deixa 07, quantidade decimal inteira igual a sete.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"7\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"7\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"7\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "D03B",
+      "group": "datas",
+      "pair": "D03",
+      "raw": "07/11/2031",
+      "kind": "date",
+      "context": "Data no calendário gregoriano. A origem não informa se usa DD/MM/AAAA ou MM/DD/AAAA. Ambas são possíveis; não escolha pelo idioma desta pergunta. Não substituir componentes.",
+      "expected": {
+        "status": "ambiguous",
+        "value": null
+      },
+      "rationale": "Sete de novembro e onze de julho são datas válidas; falta metadado para escolher.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ambiguous\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "I03B",
+      "group": "identificadores",
+      "pair": "I03",
+      "raw": "5E03",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada.",
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "A gramática de quantidade permite só dígitos; não converter silenciosamente notação científica.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"invalid\", \"value\": null}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "NCTL",
+      "group": "numeros",
+      "pair": null,
+      "raw": "84,65",
+      "kind": "money",
+      "context": "Valor monetário não negativo. A fonte declara pt-BR: ponto separa milhares e vírgula separa decimais. Não arredondar; zeros decimais excedentes podem ser removidos.",
+      "expected": {
+        "status": "ok",
+        "value": "84.65"
+      },
+      "rationale": "Controle ordinário: decimal pt-BR com duas casas já fornecidas.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"84.65\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"84.65\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"84.65\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "ACTL",
+      "group": "ausencias",
+      "pair": null,
+      "raw": "18",
+      "kind": "count",
+      "context": "Quantidade inteira não negativa. A gramática aceita apenas dígitos ASCII de 0 a 9. Campo vazio significa não informado; zero explícito é válido. Zeros iniciais são permitidos na entrada.",
+      "expected": {
+        "status": "ok",
+        "value": "18"
+      },
+      "rationale": "Controle positivo simples: dezoito foi informado explicitamente.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"18\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"18\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"18\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "DCTL",
+      "group": "datas",
+      "pair": null,
+      "raw": "16/08/2029",
+      "kind": "date",
+      "context": "Data no calendário gregoriano. A origem declara DD/MM/AAAA. Não substituir nem corrigir componentes.",
+      "expected": {
+        "status": "ok",
+        "value": "2029-08-16"
+      },
+      "rationale": "Controle sem fronteira: dezesseis de agosto é uma data válida no formato declarado.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"2029-08-16\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"2029-08-16\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"2029-08-16\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    },
+    {
+      "id": "ICTL",
+      "group": "identificadores",
+      "pair": null,
+      "raw": "9007199254741017",
+      "kind": "identifier",
+      "context": "Identificador textual opaco, não uma quantidade. Remova somente espaços e tabulações externos. Preserve todos os caracteres internos, inclusive zeros e espaços. Não interprete como número nem como notação científica.",
+      "expected": {
+        "status": "ok",
+        "value": "9007199254741017"
+      },
+      "rationale": "Código longo permanece como texto integral, sem conversão de ponto flutuante.",
+      "answers": {
+        "google/gemini-3.8-flash": {
+          "response": "{\"status\": \"ok\", \"value\": \"9007199254741017\"}",
+          "correct": true,
+          "errors": []
+        },
+        "anthropic/claude-sonnet-4-6@default": {
+          "response": "{\"status\": \"ok\", \"value\": \"9007199254741017\"}",
+          "correct": true,
+          "errors": []
+        },
+        "google/gemma-4-26b-a4b": {
+          "response": "{\"status\": \"ok\", \"value\": \"9007199254741017\"}",
+          "correct": true,
+          "errors": []
+        }
+      }
+    }
+  ]
+}

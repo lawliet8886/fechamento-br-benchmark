@@ -1,0 +1,58 @@
+{
+  "completed_cases": 28,
+  "controls": {
+    "correct": 4,
+    "total": 4
+  },
+  "dataset_sha256": "f7beed34a635e2739be1933e0adddd2bb38fb5428bcc91334ca0c9439761282a",
+  "evidence_kind": "kaggle_model_run",
+  "format_ok": 28,
+  "groups": {
+    "ausencias": {
+      "correct": 7,
+      "total": 7
+    },
+    "datas": {
+      "correct": 7,
+      "total": 7
+    },
+    "identificadores": {
+      "correct": 7,
+      "total": 7
+    },
+    "numeros": {
+      "correct": 5,
+      "total": 7
+    }
+  },
+  "instrument_sha256": "9b13f62fee36fcf14b40846a2fc07ba3b3c45d6e572fe0bc2b7e494317a8e2c6",
+  "manifest_sha256": "28e8e120922d8aa482b007cf7fa4abee8746c147e685442dcc689bdc5c3ce048",
+  "model": "google/gemma-4-26b-a4b",
+  "pair_count": 12,
+  "pair_pass_count": 11,
+  "planned_cases": 28,
+  "primary_correct": 26,
+  "protocol_sha256": "e81b29b3a86b54b3eee520107b04a9648b06abbc09792a4bf786628ba9dcf6ac",
+  "run_id": "20261007T202728_33286bd0fb0c",
+  "score": 0.9285714285714286,
+  "semantic_correct": 26,
+  "state": "completed",
+  "statuses": {
+    "ambiguous": {
+      "correct": 2,
+      "total": 2
+    },
+    "invalid": {
+      "correct": 4,
+      "total": 4
+    },
+    "missing": {
+      "correct": 3,
+      "total": 3
+    },
+    "ok": {
+      "correct": 17,
+      "total": 19
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "dataset_sha256": "f7beed34a635e2739be1933e0adddd2bb38fb5428bcc91334ca0c9439761282a",
+  "evidence_kind": "kaggle_model_run",
+  "instrument_sha256": "9b13f62fee36fcf14b40846a2fc07ba3b3c45d6e572fe0bc2b7e494317a8e2c6",
+  "manifest_sha256": "28e8e120922d8aa482b007cf7fa4abee8746c147e685442dcc689bdc5c3ce048",
+  "model": "google/gemma-4-26b-a4b",
+  "model_settings": {
+    "client_retries": 0,
+    "effective_seed": "not_verified_by_provider",
+    "http_timeout_seconds": 120,
+    "provider_prompt_cache": "not_controlled_by_this_instrument",
+    "sdk_cache_enabled_observed": false,
+    "seed_requested": 0,
+    "stream": false,
+    "support_temperature": false,
+    "temperature_passed": null
+  },
+  "planned_case_ids": [
+    "N01A",
+    "A01A",
+    "D01A",
+    "I01A",
+    "N01B",
+    "A01B",
+    "D01B",
+    "I01B",
+    "N02A",
+    "A02A",
+    "D02A",
+    "I02A",
+    "N02B",
+    "A02B",
+    "D02B",
+    "I02B",
+    "N03A",
+    "A03A",
+    "D03A",
+    "I03A",
+    "N03B",
+    "A03B",
+    "D03B",
+    "I03B",
+    "NCTL",
+    "ACTL",
+    "DCTL",
+    "ICTL"
+  ],
+  "prompt_template_sha256": "e796eb78467d0f2a291bf735aee4c710117e9f93a132239629f54565cb3ff176",
+  "protocol": {
+    "attempts_per_case": 1,
+    "cache": {
+      "provider_prompt_cache": "not_controlled",
+      "sdk_run_cache": "disabled"
+    },
+    "client_retries": 0,
+    "http_timeout_seconds": 120,
+    "incomplete_policy": "no_total_score",
+    "model_order": [
+      "google/gemini-3.8-flash",
+      "anthropic/claude-sonnet-4-6@default",
+      "google/gemma-4-26b-a4b"
+    ],
+    "n_jobs": 2,
+    "order": "fixed_case_order",
+    "protocol_id": "final-v1",
+    "sampling_requested": {
+      "seed": 0,
+      "temperature": 0
+    }
+  },
+  "protocol_sha256": "e81b29b3a86b54b3eee520107b04a9648b06abbc09792a4bf786628ba9dcf6ac",
+  "run_id": "20261007T202728_33286bd0fb0c",
+  "schema_version": "fechamento-manifest-v1",
+  "source_hashes": {
+    "fechamento_core.py": "1f4d877511f8f004d7d63454eb908b3b2aac9d973521a70a0a67610d4ec52294",
+    "final_contract.py": "bc3c8f1ffa3a69bd7c52874a8e69a91f6d824008d52c6f8fd9d8d580748db10d",
+    "final_runner.py": "9b7b44c4ed7c4c1bf375e8e03bbf7746bed3d7c2fcff88b908a23492aea3bc0b",
+    "kaggle_final_adapter.py": "f36dcbdfaba1a1fc24cf588581d7308e5cb9eb258f5dc0060aceb406a36e5c2b"
+  }
+}

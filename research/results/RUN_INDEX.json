@@ -1,0 +1,14 @@
+[
+  {
+    "model": "google/gemini-3.8-flash",
+    "run_id": "20261007T202437_146e738526b7"
+  },
+  {
+    "model": "anthropic/claude-sonnet-4-6@default",
+    "run_id": "20261007T202525_724df5c9569a"
+  },
+  {
+    "model": "google/gemma-4-26b-a4b",
+    "run_id": "20261007T202728_33286bd0fb0c"
+  }
+]
