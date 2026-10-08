@@ -1,0 +1,815 @@
+{
+  "phase": "SEPARATE_PREREGISTERED_CONFIRMATION_72_RESPONSES",
+  "date": "2026-10-08",
+  "models": [
+    {
+      "id": "google/gemini-3.8-flash",
+      "name": "Gemini 3.8 Flash"
+    },
+    {
+      "id": "anthropic/claude-sonnet-4-6@default",
+      "name": "Claude Sonnet 4.6"
+    },
+    {
+      "id": "google/gemma-4-26b-a4b",
+      "name": "Gemma 4 26B A4B"
+    }
+  ],
+  "results": [
+    {
+      "model": "google/gemini-3.8-flash",
+      "repetition": 1,
+      "strict_correct": 12,
+      "total": 12,
+      "target_correct": 8,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 12
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "strict_pass",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T090827_52bcfd1cb27b",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #1"
+    },
+    {
+      "model": "anthropic/claude-sonnet-4-6@default",
+      "repetition": 1,
+      "strict_correct": 7,
+      "total": 12,
+      "target_correct": 3,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 7,
+        "unnecessary_abstention": 4,
+        "json_container_violation": 1
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "unnecessary_abstention",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "unnecessary_abstention",
+        "CC02": "strict_pass",
+        "C01B": "unnecessary_abstention",
+        "C03A": "json_container_violation",
+        "CC03": "strict_pass",
+        "C02B": "unnecessary_abstention",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T090912_bc2e71e9669b",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #2"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b",
+      "repetition": 1,
+      "strict_correct": 11,
+      "total": 12,
+      "target_correct": 7,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 11,
+        "canonical_format_only": 1
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "canonical_format_only",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T090919_e37f3ec8a312",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #3"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "repetition": 2,
+      "strict_correct": 12,
+      "total": 12,
+      "target_correct": 8,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 12
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "strict_pass",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T091455_758227ac2e6e",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #4"
+    },
+    {
+      "model": "anthropic/claude-sonnet-4-6@default",
+      "repetition": 2,
+      "strict_correct": 6,
+      "total": 12,
+      "target_correct": 2,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "wrong_value": 1,
+        "json_container_violation": 2,
+        "strict_pass": 6,
+        "unnecessary_abstention": 3
+      },
+      "case_diagnostics": {
+        "C01A": "wrong_value",
+        "C03B": "json_container_violation",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "unnecessary_abstention",
+        "CC02": "strict_pass",
+        "C01B": "unnecessary_abstention",
+        "C03A": "json_container_violation",
+        "CC03": "strict_pass",
+        "C02B": "unnecessary_abstention",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T091533_2a06b624cd3d",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #5"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b",
+      "repetition": 2,
+      "strict_correct": 12,
+      "total": 12,
+      "target_correct": 8,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 12
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "strict_pass",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T091542_fc303f020f1c",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #6"
+    }
+  ],
+  "cases": [
+    {
+      "id": "C01A",
+      "pair": "C01",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "7.300",
+      "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+      "expected": {
+        "status": "ok",
+        "value": "7300.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 7300.00.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"7300.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"7300.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"7300.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"7300.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"7.30\"}",
+            "correct": false,
+            "diagnostic": "wrong_value"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"7300.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "C03B",
+      "pair": "C03",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "12.500",
+      "context": "Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+      "expected": {
+        "status": "ok",
+        "value": "12.50"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 12.50.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"12.50\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": false,
+            "diagnostic": "unnecessary_abstention"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"12.50\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"12.50\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "The input is \"12.500\" with the declared convention: comma = thousand separator, period = decimal separator.\n\nWith period as decimal separator, \"12.500\" means 12.500 (i.e., 12 and 500 thousandths = 12.5000...). The decimal part is \".500\" which equals 0.5 — no non-zero digits beyond two decimal places after the third position. So the value is 12.50, and the trailing zero can be removed only if it's zero, but \"12.50\" has exactly two decimal places. The value is 12.50.\n\nWait — \"12.500\": decimal part is \"500\" (three decimal digits). The extra digit is \"0\", which is a zero that can be discarded, leaving \"12.50\". But the rule says \"exactly two decimal places\" and we can remove trailing zeros only when they're zero. Here \".500\" → \".50\" after removing one trailing zero. That's fine.\n\n{\"status\": \"ok\", \"value\": \"12.50\"}",
+            "correct": false,
+            "diagnostic": "json_container_violation"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"12.50\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "CC01",
+      "pair": null,
+      "role": "control",
+      "kind": "money",
+      "raw": "6.200",
+      "context": "Valor monetário não negativo. A origem pode usar a convenção brasileira (ponto para milhares, vírgula para decimais) ou a norte-americana (vírgula para milhares, ponto para decimais), mas não informa qual foi usada. Não adivinhe. Não há qualquer outro campo disponível para desambiguar.",
+      "expected": {
+        "status": "ambiguous",
+        "value": null
+      },
+      "rationale": "Either 6200.00 or 6.20 is valid under a permitted convention; no convention is selected.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "C02A",
+      "pair": "C02",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "8.900",
+      "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+      "expected": {
+        "status": "ok",
+        "value": "8900.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 8900.00.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"8900.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"8900.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"8900.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"8900.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"8900.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"8900.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "C04B",
+      "pair": "C04",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "3.600",
+      "context": "Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+      "expected": {
+        "status": "ok",
+        "value": "3.60"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 3.60.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"3.60\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": false,
+            "diagnostic": "unnecessary_abstention"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"3.6\"}",
+            "correct": false,
+            "diagnostic": "canonical_format_only"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"3.60\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": false,
+            "diagnostic": "unnecessary_abstention"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"3.60\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "CC02",
+      "pair": null,
+      "role": "control",
+      "kind": "money",
+      "raw": "85,42",
+      "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+      "expected": {
+        "status": "ok",
+        "value": "85.42"
+      },
+      "rationale": "The source declares comma as decimal separator; both cents are nonzero and need no rounding.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"85.42\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"85.42\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"85.42\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"85.42\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"85.42\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"85.42\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "C01B",
+      "pair": "C01",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "7.300",
+      "context": "A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+      "expected": {
+        "status": "ok",
+        "value": "7.30"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 7.30.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"7.30\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": false,
+            "diagnostic": "unnecessary_abstention"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"7.30\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"7.30\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": false,
+            "diagnostic": "unnecessary_abstention"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"7.30\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "C03A",
+      "pair": "C03",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "12.500",
+      "context": "Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+      "expected": {
+        "status": "ok",
+        "value": "12500.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 12500.00.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"12500.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "The input is \"12.500\" with the declared convention: thousand separator = dot, decimal separator = comma.\n\nSo \"12.500\" has a dot, which is the thousand separator. This means the value is 12500 (twelve thousand five hundred), with no decimal part shown.\n\nResult: 12500.00\n\n{\"status\": \"ok\", \"value\": \"12500.00\"}",
+            "correct": false,
+            "diagnostic": "json_container_violation"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"12500.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"12500.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "The input is \"12.500\" with the declared convention: thousand separator = period, decimal separator = comma.\n\nSince the decimal separator is comma, a period in \"12.500\" must be interpreted as a thousand separator. So \"12.500\" = 12500, which gives \"12500.00\".\n\n{\"status\": \"ok\", \"value\": \"12500.00\"}",
+            "correct": false,
+            "diagnostic": "json_container_violation"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"12500.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "CC03",
+      "pair": null,
+      "role": "control",
+      "kind": "money",
+      "raw": "1.234,567",
+      "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "The declared convention yields 1234.567; canonical cents would require discarding a nonzero digit, which is forbidden.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"invalid\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"invalid\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"invalid\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"invalid\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"invalid\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"invalid\", \"value\": null}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "C02B",
+      "pair": "C02",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "8.900",
+      "context": "A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+      "expected": {
+        "status": "ok",
+        "value": "8.90"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 8.90.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"8.90\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": false,
+            "diagnostic": "unnecessary_abstention"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"8.90\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"8.90\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ambiguous\", \"value\": null}",
+            "correct": false,
+            "diagnostic": "unnecessary_abstention"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"8.90\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "C04A",
+      "pair": "C04",
+      "role": "contrast",
+      "kind": "money",
+      "raw": "3.600",
+      "context": "Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+      "expected": {
+        "status": "ok",
+        "value": "3600.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 3600.00.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"3600.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"3600.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"3600.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"3600.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"3600.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"3600.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    },
+    {
+      "id": "CC04",
+      "pair": null,
+      "role": "control",
+      "kind": "money",
+      "raw": "0,00",
+      "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+      "expected": {
+        "status": "ok",
+        "value": "0.00"
+      },
+      "rationale": "An explicit monetary zero is known and must not be classified as missing.",
+      "answers": {
+        "1": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"0.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"0.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"0.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        },
+        "2": {
+          "google/gemini-3.8-flash": {
+            "response": "{\"status\": \"ok\", \"value\": \"0.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "anthropic/claude-sonnet-4-6@default": {
+            "response": "{\"status\": \"ok\", \"value\": \"0.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          },
+          "google/gemma-4-26b-a4b": {
+            "response": "{\"status\": \"ok\", \"value\": \"0.00\"}",
+            "correct": true,
+            "diagnostic": "strict_pass"
+          }
+        }
+      }
+    }
+  ],
+  "bundle_sha256": "a32b622bd5c52fe547611b982f87cbcdae1e3482da43a24409487f7d04a9156d"
+}

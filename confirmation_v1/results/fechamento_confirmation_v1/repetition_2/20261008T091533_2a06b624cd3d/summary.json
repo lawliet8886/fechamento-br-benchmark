@@ -1,0 +1,10 @@
+{
+  "dataset_sha256": "9d1927774db235ba976a72f759f6f1a6e7271659387fbedf1fa382a3190e6c5d",
+  "deployment_protocol": "confirmation-v1-20261008",
+  "model": "anthropic/claude-sonnet-4-6@default",
+  "original_study": false,
+  "primary_correct": 6,
+  "run_id": "20261008T091533_2a06b624cd3d",
+  "score": 0.5,
+  "total_cases": 12
+}

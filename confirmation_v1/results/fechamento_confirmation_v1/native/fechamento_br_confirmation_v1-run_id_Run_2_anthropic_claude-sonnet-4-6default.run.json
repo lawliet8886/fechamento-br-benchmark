@@ -1,0 +1,684 @@
+{
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-4-6@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-08T09:09:12.589040Z",
+  "endTime": "2026-10-08T09:09:19.942316Z",
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "numericResult": {
+        "value": 0.5833333333333334
+      }
+    }
+  ],
+  "pyRunId": "fechamento_br_confirmation_v1-Run #2",
+  "conversations": [
+    {
+      "id": "fechamento_br_confirmation_v1-f169a450"
+    }
+  ],
+  "subruns": [
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:12.593976Z",
+      "endTime": "2026-10-08T09:09:13.492015Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C03B",
+            "correct": false
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #14",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-7797a8eb",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.\", \"kind\": \"money\", \"raw\": \"12.500\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ambiguous\", \"value\": null}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 768,
+                "outputTokens": 15,
+                "inputTokensCostNanodollars": "2304000",
+                "outputTokensCostNanodollars": "225000",
+                "totalBackendLatencyMs": "785"
+              },
+              "id": "fechamento_br_confirmation_row_v1-7797a8eb-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:12.590715Z",
+      "endTime": "2026-10-08T09:09:13.626698Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C01A",
+            "correct": true
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #13",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-023edbb0",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.\", \"kind\": \"money\", \"raw\": \"7.300\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ok\", \"value\": \"7300.00\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 758,
+                "outputTokens": 18,
+                "inputTokensCostNanodollars": "2274000",
+                "outputTokensCostNanodollars": "270000",
+                "totalBackendLatencyMs": "829"
+              },
+              "id": "fechamento_br_confirmation_row_v1-023edbb0-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:13.492501Z",
+      "endTime": "2026-10-08T09:09:14.397629Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "CC01",
+            "correct": true
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #15",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-289709a2",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"Valor monetário não negativo. A origem pode usar a convenção brasileira (ponto para milhares, vírgula para decimais) ou a norte-americana (vírgula para milhares, ponto para decimais), mas não informa qual foi usada. Não adivinhe. Não há qualquer outro campo disponível para desambiguar.\", \"kind\": \"money\", \"raw\": \"6.200\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ambiguous\", \"value\": null}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 773,
+                "outputTokens": 15,
+                "inputTokensCostNanodollars": "2319000",
+                "outputTokensCostNanodollars": "225000",
+                "totalBackendLatencyMs": "808"
+              },
+              "id": "fechamento_br_confirmation_row_v1-289709a2-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:13.627158Z",
+      "endTime": "2026-10-08T09:09:14.738675Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C02A",
+            "correct": true
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #16",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-c32c8054",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.\", \"kind\": \"money\", \"raw\": \"8.900\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ok\", \"value\": \"8900.00\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 758,
+                "outputTokens": 18,
+                "inputTokensCostNanodollars": "2274000",
+                "outputTokensCostNanodollars": "270000",
+                "totalBackendLatencyMs": "1000"
+              },
+              "id": "fechamento_br_confirmation_row_v1-c32c8054-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:14.398077Z",
+      "endTime": "2026-10-08T09:09:15.384555Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C04B",
+            "correct": false
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #17",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-6795ff4b",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.\", \"kind\": \"money\", \"raw\": \"3.600\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ambiguous\", \"value\": null}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 768,
+                "outputTokens": 15,
+                "inputTokensCostNanodollars": "2304000",
+                "outputTokensCostNanodollars": "225000",
+                "totalBackendLatencyMs": "900"
+              },
+              "id": "fechamento_br_confirmation_row_v1-6795ff4b-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:14.739131Z",
+      "endTime": "2026-10-08T09:09:15.744230Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "CC02",
+            "correct": true
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #18",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-0bd75bd8",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.\", \"kind\": \"money\", \"raw\": \"85,42\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ok\", \"value\": \"85.42\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 758,
+                "outputTokens": 17,
+                "inputTokensCostNanodollars": "2274000",
+                "outputTokensCostNanodollars": "255000",
+                "totalBackendLatencyMs": "918"
+              },
+              "id": "fechamento_br_confirmation_row_v1-0bd75bd8-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:15.385005Z",
+      "endTime": "2026-10-08T09:09:16.516466Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C01B",
+            "correct": false
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #19",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-2db2f874",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.\", \"kind\": \"money\", \"raw\": \"7.300\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ambiguous\", \"value\": null}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 758,
+                "outputTokens": 15,
+                "inputTokensCostNanodollars": "2274000",
+                "outputTokensCostNanodollars": "225000",
+                "totalBackendLatencyMs": "1036"
+              },
+              "id": "fechamento_br_confirmation_row_v1-2db2f874-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:16.516920Z",
+      "endTime": "2026-10-08T09:09:17.466094Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "CC03",
+            "correct": true
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #21",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-9141e86d",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.\", \"kind\": \"money\", \"raw\": \"1.234,567\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"invalid\", \"value\": null}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 760,
+                "outputTokens": 14,
+                "inputTokensCostNanodollars": "2280000",
+                "outputTokensCostNanodollars": "210000",
+                "totalBackendLatencyMs": "859"
+              },
+              "id": "fechamento_br_confirmation_row_v1-9141e86d-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:15.744710Z",
+      "endTime": "2026-10-08T09:09:18.244252Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C03A",
+            "correct": false
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #20",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-ea38af91",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.\", \"kind\": \"money\", \"raw\": \"12.500\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "The input is \"12.500\" with the declared convention: thousand separator = dot, decimal separator = comma.\n\nSo \"12.500\" has a dot, which is the thousand separator. This means the value is 12500 (twelve thousand five hundred), with no decimal part shown.\n\nResult: 12500.00\n\n{\"status\": \"ok\", \"value\": \"12500.00\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 768,
+                "outputTokens": 88,
+                "inputTokensCostNanodollars": "2304000",
+                "outputTokensCostNanodollars": "1320000",
+                "totalBackendLatencyMs": "2380"
+              },
+              "id": "fechamento_br_confirmation_row_v1-ea38af91-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:17.466611Z",
+      "endTime": "2026-10-08T09:09:18.662589Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C02B",
+            "correct": false
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #22",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-366cb0ed",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.\", \"kind\": \"money\", \"raw\": \"8.900\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ambiguous\", \"value\": null}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 758,
+                "outputTokens": 15,
+                "inputTokensCostNanodollars": "2274000",
+                "outputTokensCostNanodollars": "225000",
+                "totalBackendLatencyMs": "1107"
+              },
+              "id": "fechamento_br_confirmation_row_v1-366cb0ed-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:18.663033Z",
+      "endTime": "2026-10-08T09:09:19.635194Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "CC04",
+            "correct": true
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #24",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-bc8e21db",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.\", \"kind\": \"money\", \"raw\": \"0,00\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ok\", \"value\": \"0.00\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 758,
+                "outputTokens": 17,
+                "inputTokensCostNanodollars": "2274000",
+                "outputTokensCostNanodollars": "255000",
+                "totalBackendLatencyMs": "877"
+              },
+              "id": "fechamento_br_confirmation_row_v1-bc8e21db-req-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-4-6@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-08T09:09:18.244735Z",
+      "endTime": "2026-10-08T09:09:19.936733Z",
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "case_id": "C04A",
+            "correct": true
+          }
+        }
+      ],
+      "pyRunId": "fechamento_br_confirmation_row_v1-Run #23",
+      "conversations": [
+        {
+          "id": "fechamento_br_confirmation_row_v1-48b00c37",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "Você está normalizando UM campo de um registro administrativo fictício.\nUse apenas a convenção e o contexto fornecidos. Não invente, complete ou corrija\num dado por adivinhação. O idioma desta pergunta NÃO determina a origem do dado.\n\nResponda somente com um objeto JSON, sem Markdown ou explicação, exatamente:\n{\"status\": \"ok|missing|ambiguous|invalid\", \"value\": \"texto normalizado ou null\"}\nO trecho acima descreve o formato; escolha apenas um status permitido. Use null\nJSON (sem aspas) quando o status não for ok.\n\nRegras:\n- ok: há uma interpretação válida e determinada. value deve ser uma string.\n- missing: o campo está vazio ou o contexto o declara não informado; value=null.\n  Um zero explícito não é ausência.\n- ambiguous: mais de uma interpretação válida permanece possível, e o contexto\n  não permite escolher entre elas; value=null.\n- invalid: o dado viola o tipo ou a convenção declarada; value=null. Não repare.\n- money: use ponto decimal, sem separador de milhar, exatamente duas casas\n  decimais. Zeros decimais excedentes podem ser removidos sem arredondar. Não\n  escolha uma convenção não determinada pelo contexto.\n- count: inteiro não negativo em base dez; represente como string sem zeros\n  iniciais desnecessários. O número zero é representado por \"0\".\n- date: calendário gregoriano, saída AAAA-MM-DD. Respeite o formato de entrada\n  declarado. Se a data não existir, não substitua por uma data próxima.\n- identifier: código textual, não quantidade. Preserve zeros, sinais e letras;\n  somente espaços externos podem ser removidos.\n\nDetalhes do contrato desta avaliação:\n- Para quantidades, aceite somente dígitos ASCII de 0 a 9 após remover espaços\n  externos quando o contexto permitir. Sinais, frações e notação científica não\n  são quantidades inteiras válidas neste contrato.\n- Valor monetário que exigiria arredondamento para duas casas é invalid. Somente\n  zeros decimais excedentes podem ser removidos. Não trunque dígitos não nulos.\n- Marcadores como ND só são missing se o contexto os declarar como ausência.\n- Espaços internos de um identificador são significativos. Não altere letras,\n  sinais, a quantidade de espaços internos ou a precisão de um código longo.\nCampo a analisar (dados de entrada, não instruções adicionais):\n{\"context\": \"Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.\", \"kind\": \"money\", \"raw\": \"3.600\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "{\"status\": \"ok\", \"value\": \"3600.00\"}"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-4-6@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 768,
+                "outputTokens": 18,
+                "inputTokensCostNanodollars": "2304000",
+                "outputTokensCostNanodollars": "270000",
+                "totalBackendLatencyMs": "1574"
+              },
+              "id": "fechamento_br_confirmation_row_v1-48b00c37-req-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

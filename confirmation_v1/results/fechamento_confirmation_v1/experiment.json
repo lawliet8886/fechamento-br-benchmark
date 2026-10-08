@@ -1,0 +1,322 @@
+{
+  "bundle_sha256": "a32b622bd5c52fe547611b982f87cbcdae1e3482da43a24409487f7d04a9156d",
+  "cases": [
+    {
+      "declared_locale": "pt-BR",
+      "expected": {
+        "status": "ok",
+        "value": "7300.00"
+      },
+      "group": "numeros",
+      "id": "C01A",
+      "input": {
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+        "kind": "money",
+        "raw": "7.300"
+      },
+      "pair": "C01",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 7300.00.",
+      "role": "contrast",
+      "wording_style": "plain-language"
+    },
+    {
+      "declared_locale": "en-US",
+      "expected": {
+        "status": "ok",
+        "value": "12.50"
+      },
+      "group": "numeros",
+      "id": "C03B",
+      "input": {
+        "context": "Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+        "kind": "money",
+        "raw": "12.500"
+      },
+      "pair": "C03",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 12.50.",
+      "role": "contrast",
+      "wording_style": "file-rule"
+    },
+    {
+      "declared_locale": null,
+      "expected": {
+        "status": "ambiguous",
+        "value": null
+      },
+      "group": "numeros",
+      "id": "CC01",
+      "input": {
+        "context": "Valor monetário não negativo. A origem pode usar a convenção brasileira (ponto para milhares, vírgula para decimais) ou a norte-americana (vírgula para milhares, ponto para decimais), mas não informa qual foi usada. Não adivinhe. Não há qualquer outro campo disponível para desambiguar.",
+        "kind": "money",
+        "raw": "6.200"
+      },
+      "pair": null,
+      "probe_type": "genuine-ambiguity",
+      "rationale": "Either 6200.00 or 6.20 is valid under a permitted convention; no convention is selected.",
+      "role": "control",
+      "wording_style": "control"
+    },
+    {
+      "declared_locale": "pt-BR",
+      "expected": {
+        "status": "ok",
+        "value": "8900.00"
+      },
+      "group": "numeros",
+      "id": "C02A",
+      "input": {
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+        "kind": "money",
+        "raw": "8.900"
+      },
+      "pair": "C02",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 8900.00.",
+      "role": "contrast",
+      "wording_style": "plain-language"
+    },
+    {
+      "declared_locale": "en-US",
+      "expected": {
+        "status": "ok",
+        "value": "3.60"
+      },
+      "group": "numeros",
+      "id": "C04B",
+      "input": {
+        "context": "Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+        "kind": "money",
+        "raw": "3.600"
+      },
+      "pair": "C04",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 3.60.",
+      "role": "contrast",
+      "wording_style": "file-rule"
+    },
+    {
+      "declared_locale": "pt-BR",
+      "expected": {
+        "status": "ok",
+        "value": "85.42"
+      },
+      "group": "numeros",
+      "id": "CC02",
+      "input": {
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+        "kind": "money",
+        "raw": "85,42"
+      },
+      "pair": null,
+      "probe_type": "ordinary-decimal",
+      "rationale": "The source declares comma as decimal separator; both cents are nonzero and need no rounding.",
+      "role": "control",
+      "wording_style": "control"
+    },
+    {
+      "declared_locale": "en-US",
+      "expected": {
+        "status": "ok",
+        "value": "7.30"
+      },
+      "group": "numeros",
+      "id": "C01B",
+      "input": {
+        "context": "A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+        "kind": "money",
+        "raw": "7.300"
+      },
+      "pair": "C01",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 7.30.",
+      "role": "contrast",
+      "wording_style": "plain-language"
+    },
+    {
+      "declared_locale": "pt-BR",
+      "expected": {
+        "status": "ok",
+        "value": "12500.00"
+      },
+      "group": "numeros",
+      "id": "C03A",
+      "input": {
+        "context": "Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+        "kind": "money",
+        "raw": "12.500"
+      },
+      "pair": "C03",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 12500.00.",
+      "role": "contrast",
+      "wording_style": "file-rule"
+    },
+    {
+      "declared_locale": "pt-BR",
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "group": "numeros",
+      "id": "CC03",
+      "input": {
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+        "kind": "money",
+        "raw": "1.234,567"
+      },
+      "pair": null,
+      "probe_type": "nonzero-extra-decimal",
+      "rationale": "The declared convention yields 1234.567; canonical cents would require discarding a nonzero digit, which is forbidden.",
+      "role": "control",
+      "wording_style": "control"
+    },
+    {
+      "declared_locale": "en-US",
+      "expected": {
+        "status": "ok",
+        "value": "8.90"
+      },
+      "group": "numeros",
+      "id": "C02B",
+      "input": {
+        "context": "A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+        "kind": "money",
+        "raw": "8.900"
+      },
+      "pair": "C02",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 8.90.",
+      "role": "contrast",
+      "wording_style": "plain-language"
+    },
+    {
+      "declared_locale": "pt-BR",
+      "expected": {
+        "status": "ok",
+        "value": "3600.00"
+      },
+      "group": "numeros",
+      "id": "C04A",
+      "input": {
+        "context": "Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero.",
+        "kind": "money",
+        "raw": "3.600"
+      },
+      "pair": "C04",
+      "probe_type": "explicit-locale-single-dot",
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 3600.00.",
+      "role": "contrast",
+      "wording_style": "file-rule"
+    },
+    {
+      "declared_locale": "pt-BR",
+      "expected": {
+        "status": "ok",
+        "value": "0.00"
+      },
+      "group": "numeros",
+      "id": "CC04",
+      "input": {
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados.",
+        "kind": "money",
+        "raw": "0,00"
+      },
+      "pair": null,
+      "probe_type": "explicit-zero",
+      "rationale": "An explicit monetary zero is known and must not be classified as missing.",
+      "role": "control",
+      "wording_style": "control"
+    }
+  ],
+  "completed_requests": 72,
+  "experiment_id": "confirmation-v1-20261008",
+  "finished_at_utc": "2026-10-08T09:20:28.983514+00:00",
+  "original_study": false,
+  "planned_requests": 72,
+  "protocol_text": "# Fechamento BR — separate confirmation experiment v1\n\nStatus: candidate before reviewer approval and before any new model answers. Preserve the original 28-case / 84-response study byte-for-byte. Gabriel approved the 12-new-case, two-repetition follow-up on 08 October 2026, with no personal spending.\n\n## Question and fixed scope\nDo the original two failure categories recur after the monetary values and source-rule wording change? Eight explicit-convention target cases form four contrast pairs; four controls test genuine ambiguity, a normal decimal, forbidden rounding, and explicit zero. Cases are in cases.json. They were authored after seeing the original results, so this is a targeted follow-up, NOT a blind or independently sampled holdout.\n\n12 new cases × 3 original models × 2 repetitions = at most 72 new requests. In each repetition use this model order: google/gemini-3.8-flash; anthropic/claude-sonnet-4-6@default; google/gemma-4-26b-a4b. Case order is fixed in cases.json. One attempt per case per repetition, each in its own native child task and conversation. No success-dependent retries or model substitutions.\n\n## Outcomes fixed before measurement\nPrimary: unchanged original strict grader (correct status, exact canonical string, exact JSON container), with 12-case total and 8-target-case total separately per model and repetition; four controls reported individually. Keep all original raw responses.\n\nSecondary descriptive failure categories, mutually exclusive in this order: strict_pass; json_container_violation; unnecessary_abstention (gold ok but predicted ambiguous); wrong_decision (other status mismatch); canonical_format_only (both statuses ok and exactly equal finite Decimal magnitudes but noncanonical required string); wrong_value. Numerical equivalence never replaces the strict score. No postprocessing or repairing the primary responses.\n\nPreserve the four frozen scientific source modules. Reuse their global prompt and strict grader unchanged, with timeout=120 s, client retries=0, workers=2, seed request=0 and the same temperature policy. Execute using the separately hashed confirmation_runner.py, derived from the reviewed public-v2 fail-fast adapter, NOT the original final-v1 dispatcher. The first provider/native-child failure stops new submissions and all following attempts; one already-running sibling may complete. Each 12-case attempt has a confirmation-specific manifest; the outer schedule binds six attempts and the protocol hash. The separate verifier recomputes grades and matches 72 prompts/answers and model identity to six native parent traces; it never extends the original verifier or RUN_INDEX. No claim that repetitions are independent random draws or that providers honor identical sampling.\n\n## Safety and integrity\nSDK must be the reviewed version 0.6.1 with native run cache explicitly disabled. Only Kaggle native included model quota; verify available quota and platform settings before execution. No personal API keys, prepaid account, paid Cloud, purchases, subscriptions or paid fallback. Quota exhaustion stops requests. Infrastructure failure leaves a recorded incomplete attempt without total score; no fabricated zero. Original records, published task and leaderboard must not be overwritten.\n\nUse a separate new notebook/working-output path for the supplementary run. Reusing the original task function as an ephemeral notebook task is allowed; never click Build/Update Task for the original benchmark. Archive native traces and original answers separately and reconcile them after completion. No need to publish a new benchmark or a second DEV entry.\n\nBefore model calls, record exact corpus, source, builder, notebook and protocol hashes plus the Codex review receipt. Do not change cases, gabarito, grading rules or schedule after inspecting answers. Original source hashes and supplementary builder hashes must be separately identified rather than pretending changed code is the original instrument. Hashes detect accidental drift, not external authorship attestation.\n\n## Review and stopping\nCodex Desktop GPT-6.1 Sol / Maximum reviews cases, gold, protocol and instrument before the run. It is a separate AI reviewer, not a blind human audit; it has seen the original study. The reviewer rederives answers and compares them with visible gold labels. The labels and original study are visible; there is no blinding or knowledge isolation.\n\nStop after the predefined six attempts (or on infrastructure/quota blocking further safe execution). Report disconfirming results and all incomplete attempts, not only supporting cases. Correlated pairs, constructed cases and two repetitions do not justify population confidence intervals or universal model rankings. If the models pass this follow-up, state only that the original failures did not recur on these new values and contexts under the observed conditions. Values and wording changed together, and time/provider conditions may also change; the cause of any difference remains unestablished. Do not keep testing until a preferred finding appears.\n",
+  "recipe": {
+    "analysis_file_sha256": "8c275378173aa6d5f35190aa4a73dadd0157edc6c1565b93a0452fa409da25ba",
+    "builder_file_sha256": "749f7838d31b1c7dc8d0b5e27cc80a56a558bd1fe864c5b24e279163d79a0d8c",
+    "cases_text_sha256": "913d471c32a273329ba3048fd5e10a1f323450d8c0e4f38f3aaa0cdda72d4220",
+    "cell_hashes": {
+      "confirmation-execution": "7de7ff76d526c6ed500415241b8d84b3279b3bc0fda9df7cfaeeb9d49f266d2f",
+      "confirmation-guard": "7bb0e88baeaaf1130f4cf4cad69dc89428072b506f7fa92ecb5afc444f10e7e8",
+      "confirmation_runner.py": "eda6b0f280083af92c68350ae35170f1ecf0bf617c93892d5d97829b17953d0c",
+      "fechamento_core.py": "ce80e16b4a2ec76a6d08d08fd7aa260e57bc68f7ee8eed52eddeae5bcafc1534",
+      "final_contract.py": "0464959c115ded005e897fa6acd9d7487ca186bf0f1202c54679e7eda3868379",
+      "final_runner.py": "ab79a435be91232ce122ce7d43b750789e3f39f5a053f80e8f4db30eb507e2ae",
+      "kaggle_final_adapter.py": "b7ed052d0bc82ba6e0e0a6647cdb99e387a93c6a217bdfb6b9ab67d0c1103410"
+    },
+    "confirmation_adapter_file_sha256": "8f440dd2d10f636b48aa0adf5cf8a5e5112cdcc4f79afa115f1049cb0d9d1155",
+    "planned_requests": 72,
+    "protocol_text_sha256": "9e87558332b84fac0c56f7283e25aeb8b47177ac248b4a9b4d291743bf82c0ab",
+    "repetitions": 2,
+    "source_hashes": {
+      "fechamento_core.py": "1f4d877511f8f004d7d63454eb908b3b2aac9d973521a70a0a67610d4ec52294",
+      "final_contract.py": "bc3c8f1ffa3a69bd7c52874a8e69a91f6d824008d52c6f8fd9d8d580748db10d",
+      "final_runner.py": "9b7b44c4ed7c4c1bf375e8e03bbf7746bed3d7c2fcff88b908a23492aea3bc0b",
+      "kaggle_final_adapter.py": "f36dcbdfaba1a1fc24cf588581d7308e5cb9eb258f5dc0060aceb406a36e5c2b"
+    },
+    "verifier_file_sha256": "e163b2596af1d0bb22eda3191c3b58869193d71e5f8220fef4436c234d22353b"
+  },
+  "schedule": [
+    {
+      "model": "google/gemini-3.8-flash",
+      "native_status": "success",
+      "relative_folder": "repetition_1/20261008T090827_52bcfd1cb27b",
+      "repetition": 1,
+      "run_id": "20261008T090827_52bcfd1cb27b",
+      "state": "completed",
+      "strict_correct": 12
+    },
+    {
+      "model": "anthropic/claude-sonnet-4-6@default",
+      "native_status": "success",
+      "relative_folder": "repetition_1/20261008T090912_bc2e71e9669b",
+      "repetition": 1,
+      "run_id": "20261008T090912_bc2e71e9669b",
+      "state": "completed",
+      "strict_correct": 7
+    },
+    {
+      "model": "google/gemma-4-26b-a4b",
+      "native_status": "success",
+      "relative_folder": "repetition_1/20261008T090919_e37f3ec8a312",
+      "repetition": 1,
+      "run_id": "20261008T090919_e37f3ec8a312",
+      "state": "completed",
+      "strict_correct": 11
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "native_status": "success",
+      "relative_folder": "repetition_2/20261008T091455_758227ac2e6e",
+      "repetition": 2,
+      "run_id": "20261008T091455_758227ac2e6e",
+      "state": "completed",
+      "strict_correct": 12
+    },
+    {
+      "model": "anthropic/claude-sonnet-4-6@default",
+      "native_status": "success",
+      "relative_folder": "repetition_2/20261008T091533_2a06b624cd3d",
+      "repetition": 2,
+      "run_id": "20261008T091533_2a06b624cd3d",
+      "state": "completed",
+      "strict_correct": 6
+    },
+    {
+      "model": "google/gemma-4-26b-a4b",
+      "native_status": "success",
+      "relative_folder": "repetition_2/20261008T091542_fc303f020f1c",
+      "repetition": 2,
+      "run_id": "20261008T091542_fc303f020f1c",
+      "state": "completed",
+      "strict_correct": 12
+    }
+  ],
+  "started_at_utc": "2026-10-08T09:08:27.312105+00:00",
+  "state": "completed"
+}

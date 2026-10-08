@@ -1,0 +1,40 @@
+{
+  "created_at_utc": "2026-10-08T09:27:04.569351+00:00",
+  "description": "Selected native fields, not byte-identical full native exports. All requests, message contents, models, run identities, result values and request-level metrics retained. Duplicated task definitions and unused conversation-level platform metadata omitted. Full source exports preserved privately.",
+  "full_archive_sha256": "b01c5582e52afa44e7aa397ed3f26064e187c85a71ac3976816f810c755245e3",
+  "record_files_copied_unchanged": 72,
+  "native_parent_extracts": 6,
+  "traces": [
+    {
+      "file": "fechamento_br_confirmation_v1-run_id_Run_1_google_gemini-3.8-flash.run.json",
+      "full_private_source_sha256": "dfa14645f0922abb5e94b47fe19efb331a53ba414705ba1c855dd28e62551d66",
+      "public_extract_sha256": "040c3424fa41f197137629d5e7040551036dc566e1dbdaadcec38e0c8e2cfa94"
+    },
+    {
+      "file": "fechamento_br_confirmation_v1-run_id_Run_2_anthropic_claude-sonnet-4-6default.run.json",
+      "full_private_source_sha256": "6e4390264fa8e58a115b48a858a2d40ac1fd2befbfe9936bf54569b7c616a45e",
+      "public_extract_sha256": "aa500d1b1e78af618a1d0dc9df76eac82bc133a7969bf7c5ee3c137800827b4b"
+    },
+    {
+      "file": "fechamento_br_confirmation_v1-run_id_Run_3_google_gemma-4-26b-a4b.run.json",
+      "full_private_source_sha256": "bebbe87d06f649f6ceeb5fb73d6fe86cc18b3e31dc299beb523ddd365f13e67a",
+      "public_extract_sha256": "e7cec5e54589a94278a59d3f4564c4f2468e0c8fb56c9a7c78fee6c9c77cc22c"
+    },
+    {
+      "file": "fechamento_br_confirmation_v1-run_id_Run_4_google_gemini-3.8-flash.run.json",
+      "full_private_source_sha256": "32006e332892544db391e5bfc0f56fa05920eafc63bfce718f9864ec07eccff9",
+      "public_extract_sha256": "28da370923d6379e4ce1b44345e62e52f184ae8715f13a5eabd316f15374258d"
+    },
+    {
+      "file": "fechamento_br_confirmation_v1-run_id_Run_5_anthropic_claude-sonnet-4-6default.run.json",
+      "full_private_source_sha256": "fa01d3fb2a7ae412d42fd836bc15dd437da727cbadf7b338309d5ff8afd7b90d",
+      "public_extract_sha256": "6702ed07b75b65f8e92c7c2ba03ec00fb28147f44060f05004e03ff991d6bf31"
+    },
+    {
+      "file": "fechamento_br_confirmation_v1-run_id_Run_6_google_gemma-4-26b-a4b.run.json",
+      "full_private_source_sha256": "1460d591758de73ade151a82071602456953f81b0f91050defd312e32e7be7b1",
+      "public_extract_sha256": "3fb17cf6f9405ff0137a338009df02742aded0bc806d451ac9194c41646ab6fa"
+    }
+  ],
+  "source_bundle_sha256": "a32b622bd5c52fe547611b982f87cbcdae1e3482da43a24409487f7d04a9156d"
+}

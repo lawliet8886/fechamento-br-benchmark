@@ -1,0 +1,220 @@
+{
+  "experiment_id": "confirmation-v1-20261008",
+  "state": "verified_complete",
+  "original_study": false,
+  "responses": 72,
+  "native_parent_runs": 6,
+  "native_individual_conversations": 72,
+  "native_prompts_answers_models_matched": true,
+  "bundle_sha256": "a32b622bd5c52fe547611b982f87cbcdae1e3482da43a24409487f7d04a9156d",
+  "native_included_quota_usd": 0.1470522,
+  "personal_api_payment": false,
+  "results": [
+    {
+      "model": "google/gemini-3.8-flash",
+      "repetition": 1,
+      "strict_correct": 12,
+      "total": 12,
+      "target_correct": 8,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 12
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "strict_pass",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T090827_52bcfd1cb27b",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #1"
+    },
+    {
+      "model": "anthropic/claude-sonnet-4-6@default",
+      "repetition": 1,
+      "strict_correct": 7,
+      "total": 12,
+      "target_correct": 3,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 7,
+        "unnecessary_abstention": 4,
+        "json_container_violation": 1
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "unnecessary_abstention",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "unnecessary_abstention",
+        "CC02": "strict_pass",
+        "C01B": "unnecessary_abstention",
+        "C03A": "json_container_violation",
+        "CC03": "strict_pass",
+        "C02B": "unnecessary_abstention",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T090912_bc2e71e9669b",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #2"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b",
+      "repetition": 1,
+      "strict_correct": 11,
+      "total": 12,
+      "target_correct": 7,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 11,
+        "canonical_format_only": 1
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "canonical_format_only",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T090919_e37f3ec8a312",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #3"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "repetition": 2,
+      "strict_correct": 12,
+      "total": 12,
+      "target_correct": 8,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 12
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "strict_pass",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T091455_758227ac2e6e",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #4"
+    },
+    {
+      "model": "anthropic/claude-sonnet-4-6@default",
+      "repetition": 2,
+      "strict_correct": 6,
+      "total": 12,
+      "target_correct": 2,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "wrong_value": 1,
+        "json_container_violation": 2,
+        "strict_pass": 6,
+        "unnecessary_abstention": 3
+      },
+      "case_diagnostics": {
+        "C01A": "wrong_value",
+        "C03B": "json_container_violation",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "unnecessary_abstention",
+        "CC02": "strict_pass",
+        "C01B": "unnecessary_abstention",
+        "C03A": "json_container_violation",
+        "CC03": "strict_pass",
+        "C02B": "unnecessary_abstention",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T091533_2a06b624cd3d",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #5"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b",
+      "repetition": 2,
+      "strict_correct": 12,
+      "total": 12,
+      "target_correct": 8,
+      "targets": 8,
+      "controls": {
+        "CC01": "strict_pass",
+        "CC02": "strict_pass",
+        "CC03": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "diagnostics": {
+        "strict_pass": 12
+      },
+      "case_diagnostics": {
+        "C01A": "strict_pass",
+        "C03B": "strict_pass",
+        "CC01": "strict_pass",
+        "C02A": "strict_pass",
+        "C04B": "strict_pass",
+        "CC02": "strict_pass",
+        "C01B": "strict_pass",
+        "C03A": "strict_pass",
+        "CC03": "strict_pass",
+        "C02B": "strict_pass",
+        "C04A": "strict_pass",
+        "CC04": "strict_pass"
+      },
+      "run_id": "20261008T091542_fc303f020f1c",
+      "native_py_run_id": "fechamento_br_confirmation_v1-Run #6"
+    }
+  ],
+  "interpretation": "Targeted authored follow-up; no causal attribution, independent-draw or population-ranking claim.",
+  "verified_at_utc": "2026-10-08T09:27:05.892595+00:00"
+}

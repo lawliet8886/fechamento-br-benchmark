@@ -12,6 +12,14 @@
 
 **[Public Kaggle benchmark](https://www.kaggle.com/benchmarks/lawliet8886/fechamento-br-same-score-different-failure)** — official Kaggle Task/collection.
 
+## Preregistered targeted follow-up (8 October 2026)
+
+We registered 12 additional fictional money cases and a two-repetition protocol **before collecting follow-up answers**. The separate study contains **72 unchanged responses** from the three original models. It does not change the frozen 84 original responses or the Kaggle public leaderboard. Unlike a simple model ranking, the main lesson is that strict mistakes need different diagnoses.
+
+**[Explore all 72 follow-up answers](https://lawliet8886.github.io/fechamento-br-benchmark/confirmation.html)** — both repetitions, controls, failures, and every exact original response.
+
+**[Read the results and methodological limits](confirmation_v1/RESULTS.md)** — six completed native runs, publicly preregistered inputs, preserved evidence and an offline verification command. No personal paid API calls.
+
 ## Frozen original study
 
 | Model | Strict correct | Complete contrast pairs |

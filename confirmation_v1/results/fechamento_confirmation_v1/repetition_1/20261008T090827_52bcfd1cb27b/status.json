@@ -1,0 +1,9 @@
+{
+  "completed_cases": 12,
+  "dataset_sha256": "9d1927774db235ba976a72f759f6f1a6e7271659387fbedf1fa382a3190e6c5d",
+  "finished_at_utc": "2026-10-08T09:09:12.555531+00:00",
+  "model": "google/gemini-3.8-flash",
+  "planned_cases": 12,
+  "run_id": "20261008T090827_52bcfd1cb27b",
+  "state": "completed"
+}
