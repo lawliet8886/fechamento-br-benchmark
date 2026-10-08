@@ -1,0 +1,236 @@
+{
+  "experiment_id": "confirmation-v1-20261008",
+  "status": "candidate-awaiting-codex-review",
+  "case_count": 12,
+  "design": "Four contrast pairs with explicit punctuation (8 target cases), plus 4 standalone controls; Portuguese prompts; newly authored after original results, not a blind holdout.",
+  "cases": [
+    {
+      "id": "C01A",
+      "role": "contrast",
+      "pair": "C01",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "plain-language",
+      "declared_locale": "pt-BR",
+      "input": {
+        "kind": "money",
+        "raw": "7.300",
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "7300.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 7300.00."
+    },
+    {
+      "id": "C03B",
+      "role": "contrast",
+      "pair": "C03",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "file-rule",
+      "declared_locale": "en-US",
+      "input": {
+        "kind": "money",
+        "raw": "12.500",
+        "context": "Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "12.50"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 12.50."
+    },
+    {
+      "id": "CC01",
+      "role": "control",
+      "pair": null,
+      "group": "numeros",
+      "probe_type": "genuine-ambiguity",
+      "wording_style": "control",
+      "declared_locale": null,
+      "input": {
+        "kind": "money",
+        "raw": "6.200",
+        "context": "Valor monetário não negativo. A origem pode usar a convenção brasileira (ponto para milhares, vírgula para decimais) ou a norte-americana (vírgula para milhares, ponto para decimais), mas não informa qual foi usada. Não adivinhe. Não há qualquer outro campo disponível para desambiguar."
+      },
+      "expected": {
+        "status": "ambiguous",
+        "value": null
+      },
+      "rationale": "Either 6200.00 or 6.20 is valid under a permitted convention; no convention is selected."
+    },
+    {
+      "id": "C02A",
+      "role": "contrast",
+      "pair": "C02",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "plain-language",
+      "declared_locale": "pt-BR",
+      "input": {
+        "kind": "money",
+        "raw": "8.900",
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "8900.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 8900.00."
+    },
+    {
+      "id": "C04B",
+      "role": "contrast",
+      "pair": "C04",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "file-rule",
+      "declared_locale": "en-US",
+      "input": {
+        "kind": "money",
+        "raw": "3.600",
+        "context": "Regra declarada do arquivo: separador de milhar = vírgula; separador decimal = ponto. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "3.60"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 3.60."
+    },
+    {
+      "id": "CC02",
+      "role": "control",
+      "pair": null,
+      "group": "numeros",
+      "probe_type": "ordinary-decimal",
+      "wording_style": "control",
+      "declared_locale": "pt-BR",
+      "input": {
+        "kind": "money",
+        "raw": "85,42",
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "85.42"
+      },
+      "rationale": "The source declares comma as decimal separator; both cents are nonzero and need no rounding."
+    },
+    {
+      "id": "C01B",
+      "role": "contrast",
+      "pair": "C01",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "plain-language",
+      "declared_locale": "en-US",
+      "input": {
+        "kind": "money",
+        "raw": "7.300",
+        "context": "A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "7.30"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 7.30."
+    },
+    {
+      "id": "C03A",
+      "role": "contrast",
+      "pair": "C03",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "file-rule",
+      "declared_locale": "pt-BR",
+      "input": {
+        "kind": "money",
+        "raw": "12.500",
+        "context": "Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "12500.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 12500.00."
+    },
+    {
+      "id": "CC03",
+      "role": "control",
+      "pair": null,
+      "group": "numeros",
+      "probe_type": "nonzero-extra-decimal",
+      "wording_style": "control",
+      "declared_locale": "pt-BR",
+      "input": {
+        "kind": "money",
+        "raw": "1.234,567",
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados."
+      },
+      "expected": {
+        "status": "invalid",
+        "value": null
+      },
+      "rationale": "The declared convention yields 1234.567; canonical cents would require discarding a nonzero digit, which is forbidden."
+    },
+    {
+      "id": "C02B",
+      "role": "contrast",
+      "pair": "C02",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "plain-language",
+      "declared_locale": "en-US",
+      "input": {
+        "kind": "money",
+        "raw": "8.900",
+        "context": "A planilha de origem usa vírgula para separar milhares e ponto para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "8.90"
+      },
+      "rationale": "The explicit en-US punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 8.90."
+    },
+    {
+      "id": "C04A",
+      "role": "contrast",
+      "pair": "C04",
+      "group": "numeros",
+      "probe_type": "explicit-locale-single-dot",
+      "wording_style": "file-rule",
+      "declared_locale": "pt-BR",
+      "input": {
+        "kind": "money",
+        "raw": "3.600",
+        "context": "Regra declarada do arquivo: separador de milhar = ponto; separador decimal = vírgula. Trata-se de dinheiro, não de identificador. A conversão deve preservar o valor e gerar duas casas decimais. Não arredonde: descarte casas excedentes apenas quando forem zero."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "3600.00"
+      },
+      "rationale": "The explicit pt-BR punctuation rule uniquely determines the amount; the output contract requires the exact canonical string 3600.00."
+    },
+    {
+      "id": "CC04",
+      "role": "control",
+      "pair": null,
+      "group": "numeros",
+      "probe_type": "explicit-zero",
+      "wording_style": "control",
+      "declared_locale": "pt-BR",
+      "input": {
+        "kind": "money",
+        "raw": "0,00",
+        "context": "A planilha de origem usa ponto para separar milhares e vírgula para separar a parte decimal. O campo é um valor monetário não negativo. O resultado deve ter exatamente duas casas decimais, sem arredondamento; só zeros excedentes podem ser retirados."
+      },
+      "expected": {
+        "status": "ok",
+        "value": "0.00"
+      },
+      "rationale": "An explicit monetary zero is known and must not be classified as missing."
+    }
+  ]
+}
